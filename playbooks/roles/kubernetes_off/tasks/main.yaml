@@ -1,0 +1,13 @@
+---
+ - name: stop and docker service
+   systemd: name=docker state=stopped enabled=no
+
+ - name: disable kubernetes
+   command: pkill hyperkube
+   ignore_errors: True
+   #file: state=touch path=/tmp/pkill_hyperkube
+
+ - name: disable etcd
+   command: pkill etcd
+   ignore_errors: True
+   #file: state=touch path=/tmp/pkill_etcd

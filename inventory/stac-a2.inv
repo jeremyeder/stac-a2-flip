@@ -1,0 +1,8 @@
+[all]
+localhost
+
+[all:vars]
+# set kubernetes_node to On or Off
+#kubernetes_mode=Off
+#baremetal=False
+kube_root=/storage/repos/kubernetes

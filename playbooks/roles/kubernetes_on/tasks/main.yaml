@@ -1,0 +1,11 @@
+---
+ - name: start docker service
+   systemd: name=docker state=started enabled=no
+
+ - name: start kubernetes
+   command: {{ kube_root }}/hack/local-up-cluster.sh
+   #file: state=touch path=/tmp/local-cluster-up
+
+ - name: start etcd
+   command: etcd
+   #file: state=touch path=/tmp/start_etcd
